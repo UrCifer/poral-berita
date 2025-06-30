@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');  
+
+* {  
+    box-sizing: border-box;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+body {  
+    font-family: 'Poppins', sans-serif;  
+    line-height: 1.6;  
+    scroll-behavior: smooth;  
+}  
+
+/* Hero Image Slider Styles */
+.hero-section {
+    position: relative;
+    height: 500px; /* Fixed height for the hero section */
+    overflow: hidden;
+    padding: 100px 0; /* Menambah padding untuk konten hero */
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.slide-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+#prev-slide, #next-slide {
+    transition: all 0.3s ease;
+}
+
+#prev-slide:hover, #next-slide:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 640px) {
+    .hero-section {
+        height: 400px;
+    }
+}
+
+/* Styling khusus untuk tombol Edit dan Hapus di dashboard */
+a.Edit,
+a[href*="edit"],
+button.edit-button,
+button.Edit {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    padding: 6px 14px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 2px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+a.Hapus,
+a[href*="hapus"],
+a[href*="delete"],
+button.hapus-button,
+button.Hapus {
+    background-color: #ef4444 !important;
+    color: white !important;
+    padding: 6px 14px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 2px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Styling untuk tombol di dashboard */
+table td a,
+table td button {
+    padding: 6px 14px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 2px !important;
+    color: white !important;
+}
+
+/* Styling untuk semua tombol di kolom Aksi */
+.aksi-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Styling khusus untuk interface yang terlihat di screenshot */
+#app table a.btn-blue,
+#app table a.btn-red,
+#app table a[href="#"].btn-blue,
+#app table a[href="#"].btn-red {
+    font-size: 14px !important;
+    padding: 6px 14px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    color: white !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+
+#app table a.btn-blue {
+    background-color: #3b82f6 !important;
+}
+
+#app table a.btn-red {
+    background-color: #ef4444 !important;
+}
